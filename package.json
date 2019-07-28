@@ -1,0 +1,34 @@
+{
+	"name": "js-testing-example",
+	"version": "0.0.1",
+	"description": "JavaScript testing example for demonstration purposes",
+	"main": "src/index.js",
+	"scripts": {
+		"start": "node src/index.js",
+		"test": "mocha --require esm test/**/*.spec.js",
+		"lint": "eslint **/*.js",
+		"lint:fix": "eslint **/*.js --fix"
+	},
+	"keywords": [
+		"testing",
+		"example",
+		"mocha",
+		"chai"
+	],
+	"author": "Mohamed Sallam <sallamx99@gmail.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"chai": "^4.2.0",
+		"eslint": "^6.1.0",
+		"eslint-config-prettier": "^6.0.0",
+		"eslint-config-standard": "^13.0.1",
+		"eslint-plugin-import": "^2.18.2",
+		"eslint-plugin-node": "^9.1.0",
+		"eslint-plugin-prettier": "^3.1.0",
+		"eslint-plugin-promise": "^4.2.1",
+		"eslint-plugin-standard": "^4.0.0",
+		"esm": "^3.2.25",
+		"mocha": "^6.2.0",
+		"prettier": "^1.18.2"
+	}
+}
