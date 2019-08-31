@@ -22,10 +22,10 @@ And return a promise that resolves to a `Boolean` or rejects with an `Error`
 ### Processing Rules
 
 - Username and Password are required
-- Password is minimum length should be 7 characters
+- Password's minimum length should be 7 characters
 - Username should be saved under `/tmp/{username}.json`
 - Password should be hashed with SHA-256
-- Username should trimmed and case-insensitive
+- Username should be trimmed and case-insensitive
 
 ### Rejections
 
