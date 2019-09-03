@@ -1,24 +1,24 @@
 export class Item {
-	constructor({ id, price, name, availableStock }) {
-		this.id = id;
-		this.price = price;
-		this.name = name;
-		this.availableStock = availableStock;
+	constructor({ id, name, price, availableStock }) {
+		this._id = id;
+		this._name = name;
+		this._price = price;
+		this._availableStock = availableStock;
 	}
 
 	get availableStockColor() {
-		if (this.availableStock === 0) {
+		if (this._availableStock === 0) {
 			return '#f00';
 		}
-		if (this.availableStock > 3) {
+		if (this._availableStock > 3) {
 			return '#0f0';
 		}
-		if (this.availableStock <= 3) {
+		if (this._availableStock <= 3) {
 			return '#ff0';
 		}
 	}
 
-	get disabledAddToCart() {
+	get shouldDisableAddToCart() {
 		if (this.availableStock === 0) {
 			return true;
 		}
@@ -26,8 +26,10 @@ export class Item {
 	}
 
 	addToCart() {
-		if (this.disabledAddToCart)
-			throw new Error('cannot add out of stock item to cart');
-		else return true;
+		if (this.shouldDisableAddToCart) {
+			throw new Error('cannot add item without available stock to cart');
+		} else {
+			return true;
+		}
 	}
 }
